@@ -1,11 +1,59 @@
-import react from "react";
+import React from "react";
 
-function StopWatch(props) {
-    return (
+export default class StopWatch extends React.Component {
+
+   
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            text: "시작",
+        };
+
+        this.time = 0;
+        var startedTime = 0;
+    }
+
+
+    
+    render() {
+        return( 
         <div>
-            <button>버튼</button>
+            <div>{this.time}</div>
+            <button onClick={this.btn1}>{this.state.text}</button>
         </div>
-    );
-}
+        );
+    }
 
-export default StopWatch;
+    
+    
+    btn1 = () => {
+
+        if(this.state.text == "시작") {
+        this.setState({
+            text: "리셋",            
+        });
+        //        this.startedTime = Date.now();
+    
+        }
+
+        if(this.state.text == "리셋") {
+            this.setState({
+                text: "시작",
+            });
+
+
+
+
+        }
+
+    };
+
+
+    }
+
+
+
+
+
+
