@@ -9,8 +9,8 @@ export default class StopWatch extends React.Component {
         this.state = {
             text: "시작",
         };
-
-        this.time = 0;
+        
+        let time = 0;
         var startedTime = 0;
     }
 
@@ -26,11 +26,11 @@ export default class StopWatch extends React.Component {
     }
 
     
-    
     btn1 = () => {
 
         if(this.state.text == "시작") {
-        this.setState({
+            this.time = Date.now();
+            this.setState({
             text: "리셋",            
         });
         //        this.startedTime = Date.now();
@@ -38,15 +38,11 @@ export default class StopWatch extends React.Component {
         }
 
         if(this.state.text == "리셋") {
+            this.time = 0;
             this.setState({
                 text: "시작",
             });
-
-
-
-
         }
-
     };
 
 
