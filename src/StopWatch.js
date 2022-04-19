@@ -10,8 +10,7 @@ export default class StopWatch extends React.Component {
             text: "시작",
         };
         
-        let time = 0;
-        var startedTime = 0;
+        let time,year,month,date;
     }
 
 
